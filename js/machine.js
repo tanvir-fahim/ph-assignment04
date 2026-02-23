@@ -11,9 +11,9 @@ function setTabVisible(sectionId, tabButtonnId)
     document.getElementById(sectionId).classList.add("block");
 
     const unselecteTabButton = "px-6 py-2 rounded-md text-base bg-white text-[#64748B] shadow-sm";
-    document.getElementById("all-tab").className = unselecteTabButton;
-    document.getElementById("interview-tab").className = unselecteTabButton;
-    document.getElementById("rejected-tab").className = unselecteTabButton;
+    document.getElementById("all-tab-btn").className = unselecteTabButton;
+    document.getElementById("interview-tab-btn").className = unselecteTabButton;
+    document.getElementById("rejected-tab-btn").className = unselecteTabButton;
 
     const selectTabButton = "px-6 py-2 rounded-md text-base bg-blue-600 text-white shadow-sm";
     document.getElementById(tabButtonnId).className = selectTabButton;
