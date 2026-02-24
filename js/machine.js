@@ -57,4 +57,14 @@ function updateDashboardCounts()
         document.getElementById("empty-rejected").classList.add("hidden");
         document.getElementById("empty-rejected").classList.remove("block");
     }
+
+    if(allJobNumber === 0)
+    {
+        document.getElementById("noJobAll-section").classList.remove("hidden");
+        document.getElementById("noJobAll-section").classList.add("block");
+    }
+    else{
+        document.getElementById("noJobAll-section").classList.add("hidden");
+        document.getElementById("noJobAll-section").classList.remove("block");
+    }
 }
