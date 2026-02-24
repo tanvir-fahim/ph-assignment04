@@ -22,3 +22,34 @@ document.getElementById("rejected-tab-btn")
             setTabVisible("rejected-section", "rejected-tab-btn");
         }
 );
+
+// Interview button e click korle copy hoye interview tab e jabe
+function makeInterview(jobCardId)
+{
+    const originalCard = document.getElementById(jobCardId);
+    if(!originalCard)
+    {
+        return;
+    }
+
+    const notAppliedBadge = originalCard.querySelector('[id^="not-applied-job-"]');
+    const interviewButton = originalCard.querySelector('[id^="btn-interview-job-"]');
+    const rejetedButton = originalCard.querySelector('[id^="btn-rejected-job-"]');
+
+    notAppliedBadge.innerText = "INTERVIEW";
+    notAppliedBadge.className = "mb-4 inline-block px-3 py-3 rounded text-xs font-bold bg-[#D1FAE5] text-emerald-700";
+    interviewButton.className = "px-3 py-2 rounded text-xs font-bold bg-green-600 text-white";
+    rejetedButton.className = "px-3 py-2 rounded text-xs font-bold border border-red-600 text-red-600 bg-transparent hover:bg-red-50";
+
+    const existingClone = document.getElementById(jobCardId + "-clone");
+    if(existingClone)
+    {
+        existingClone.remove();
+    }
+
+    const makeDuplicateCard = originalCard.cloneNode(true);
+    makeDuplicateCard.id = jobCardId + "-clone";
+    document.getElementById("interview-list").appendChild(makeDuplicateCard);
+
+    updateDashboardCounts();
+}
