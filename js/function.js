@@ -33,6 +33,10 @@ function makeInterview(jobCardId)
     }
 
     const notAppliedBadge = originalCard.querySelector('[id^="not-applied-job-"]');
+    if (notAppliedBadge.innerText === "INTERVIEW")
+    {
+        return; 
+    }
     const interviewButton = originalCard.querySelector('[id^="btn-interview-job-"]');
     const rejetedButton = originalCard.querySelector('[id^="btn-rejected-job-"]');
 
@@ -63,6 +67,10 @@ function makeRejected(jobCardId)
     }
 
     const notAppliedBadge = originalCard.querySelector('[id^="not-applied-job-"]');
+    if (notAppliedBadge.innerText === "REJECTED")
+    {
+        return; 
+    }
     const interviewButton = originalCard.querySelector('[id^="btn-interview-job-"]');
     const rejetedButton = originalCard.querySelector('[id^="btn-rejected-job-"]');
 
