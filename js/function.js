@@ -83,3 +83,25 @@ function makeRejected(jobCardId)
 
     updateDashboardCounts();
 }
+
+
+function deleteJob(jobCardId)
+{
+
+    const originalCard = document.getElementById(jobCardId);
+    
+    if(originalCard)
+    {
+        originalCard.remove();
+    }
+
+    const duplicateCard = document.getElementById(jobCardId + "-clone");
+
+    if (duplicateCard)
+    {
+        duplicateCard.remove();
+    }
+
+    updateDashboardCounts();
+    
+}
