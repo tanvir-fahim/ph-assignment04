@@ -75,7 +75,7 @@ function makeRejected(jobCardId)
     const rejetedButton = originalCard.querySelector('[id^="btn-rejected-job-"]');
 
     notAppliedBadge.innerText = "REJECTED";
-    notAppliedBadge.className = "mb-4 inline-block px-3 py-3 rounded text-xs font-bold bg-[#D1FAE5] text-emerald-700";
+    notAppliedBadge.className = "mb-4 inline-block px-3 py-3 rounded text-xs font-bold bg-red-100 text-red-700";
     rejetedButton.className = "px-3 py-2 rounded text-xs font-bold bg-red-600 text-white";
     interviewButton.className = "px-3 py-2 rounded text-xs font-bold bg-transparent text-green-600 border border-green-600 hover:bg-green-50";
 
