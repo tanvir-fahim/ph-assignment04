@@ -53,3 +53,33 @@ function makeInterview(jobCardId)
 
     updateDashboardCounts();
 }
+
+function makeRejected(jobCardId)
+{
+    const originalCard = document.getElementById(jobCardId);
+    if(!originalCard)
+    {
+        return;
+    }
+
+    const notAppliedBadge = originalCard.querySelector('[id^="not-applied-job-"]');
+    const interviewButton = originalCard.querySelector('[id^="btn-interview-job-"]');
+    const rejetedButton = originalCard.querySelector('[id^="btn-rejected-job-"]');
+
+    notAppliedBadge.innerText = "REJECTED";
+    notAppliedBadge.className = "mb-4 inline-block px-3 py-3 rounded text-xs font-bold bg-[#D1FAE5] text-emerald-700";
+    rejetedButton.className = "px-3 py-2 rounded text-xs font-bold bg-red-600 text-white";
+    interviewButton.className = "px-3 py-2 rounded text-xs font-bold bg-transparent text-green-600 border border-green-600 hover:bg-green-50";
+
+    const existingClone = document.getElementById(jobCardId + "-clone");
+    if(existingClone)
+    {
+        existingClone.remove();
+    }
+
+    const makeDuplicateCard = originalCard.cloneNode(true);
+    makeDuplicateCard.id = jobCardId + "-clone";
+    document.getElementById("rejected-list").appendChild(makeDuplicateCard);
+
+    updateDashboardCounts();
+}
